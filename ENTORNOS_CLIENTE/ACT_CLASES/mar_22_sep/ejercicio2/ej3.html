@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</style>
+</head>
+<body>
+      
+    
+    <script>
+            
+            let numero_usuario = parseInt(("Introduce un numero"));
+            let numero = parseInt(Math.random() * 101 );
+
+            let condicion = true ; 
+            if(isNaN(numero_usuario)){
+                    condicion = false ; 
+            }
+
+            while (condicion || numero !== numero_usuario) {    
+                 numero_usuario = parseInt(("Introduce un numero"));
+
+                 if(numero_usuario === numero){
+                        break ;
+                 }
+                numero = parseInt(Math.random() * 101 );
+                 
+            }
+
+            alert("ganaste la partida por que acertaste")
+            if(!condicion){
+                    alert("No se acerto , finalizando juegoo ......")
+            }
+            
+
+    </script>
+    
+</body>
+</html>

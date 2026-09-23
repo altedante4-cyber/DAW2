@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .board {
+  --size: 110px;
+  --stroke: #d40000;
+
+  display: grid;
+  grid-template-columns: repeat(3, var(--size));
+  grid-template-rows: repeat(4, var(--size));
+
+  width: fit-content;
+}
+
+.cell {
+  position: relative;
+
+  width: var(--size);
+  height: var(--size);
+
+  padding: 0;
+  margin: 0;
+
+  appearance: none;
+  background: white;
+  border: 5px solid var(--stroke);
+
+  cursor: pointer;
+
+  /* evita que el borde se sume al tamaño */
+  box-sizing: border-box;
+
+  transition:
+    background-color 120ms ease,
+    transform 120ms ease;
+}
+
+/* El aspecto de "dibujo a mano" */
+.cell:nth-child(3n + 1) {
+  transform: rotate(-0.4deg);
+}
+
+.cell:nth-child(3n + 2) {
+  transform: rotate(0.3deg);
+}
+
+.cell:nth-child(3n) {
+  transform: rotate(-0.5deg);
+}
+
+/* Hover */
+@media (hover: hover) and (pointer: fine) {
+  .cell:hover {
+    background: #fff3f3;
+    transform: scale(1.02);
+  }
+}
+
+/* Click / teclado */
+.cell:active {
+  transform: scale(0.97);
+}
+
+/* Accesibilidad */
+.cell:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+</style>
+<body>
+    <div class="board" aria-label="Tablero">
+  <button class="cell" type="button" data-cell="0"></button>
+  <button class="cell" type="button" data-cell="1"></button>
+  <button class="cell" type="button" data-cell="2"></button>
+
+  <button class="cell" type="button" data-cell="3"></button>
+  <button class="cell" type="button" data-cell="4"></button>
+  <button class="cell" type="button" data-cell="5"></button>
+
+  <button class="cell" type="button" data-cell="6"></button>
+  <button class="cell" type="button" data-cell="7"></button>
+  <button class="cell" type="button" data-cell="8"></button>
+
+  <button class="cell" type="button" data-cell="9"></button>
+  <button class="cell" type="button" data-cell="10"></button>
+  <button class="cell" type="button" data-cell="11"></button>
+</div>
+</body>
+</html>
