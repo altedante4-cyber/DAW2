@@ -3,40 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-</style>
+    <title>Adivina el Número</title>
 </head>
 <body>
-      
-    
     <script>
-            
-            let numero_usuario = parseInt(("Introduce un numero"));
-            let numero = parseInt(Math.random() * 101 );
+        let numero = parseInt(Math.random() * 101);
+        let numero_usuario = 0;
+        console.log(numero);
 
-            let condicion = true ; 
+        while (numero !== numero_usuario) {
+            numero_usuario = parseInt(prompt("Introduce un número:"));
+
             if(isNaN(numero_usuario)){
-                    condicion = false ; 
+                alert("Introduciste un valor invalido perdiste la partida");
+                break;
             }
 
-            while (condicion || numero !== numero_usuario) {    
-                 numero_usuario = parseInt(("Introduce un numero"));
+        }
 
-                 if(numero_usuario === numero){
-                        break ;
-                 }
-                numero = parseInt(Math.random() * 101 );
-                 
-            }
-
-            alert("ganaste la partida por que acertaste")
-            if(!condicion){
-                    alert("No se acerto , finalizando juegoo ......")
-            }
-            
-
+        if (numero === numero_usuario) {
+            alert("Ganaste la partida");
+        }
     </script>
-    
 </body>
 </html>
